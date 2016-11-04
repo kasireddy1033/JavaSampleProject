@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script  type="text/javascript">
+var myApp = angular.module('myApp', []);
+myApp.controller('AppCtrl', function($scope, $http) {
+
+  var updateView = function() {
+	  $http({  
+          method : 'GET',  
+          url : 'http://localhost:8086/SampleJavaProject/v1/history'  
+      }).then(function successCallback(response) {  
+          $scope.history = response.data;  
+      }, function errorCallback(response) {  
+          console.log(response.statusText);  
+      });    
+  };
+  
+  updateView();
+});
+             
+</script>
+
+<title>History App</title>
+
+<style type="text/css">
+.bg {
+       position: absolute;
+       height: 100%;
+       width: 100%;
+       top: 0px;
+       z-index: 0;
+       background-color: #197370;
+}
+
+
+.layer {
+       position: fixed;
+       top: 0px;
+       margin: auto;
+       width: 100%;
+       z-index: 100;
+       min-height: 400px;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background-position: top center;
+       background-repeat: no-repeat;
+}
+
+.parallax {
+       height: 100vh;
+       overflow-x: hidden;
+       overflow-y: scroll;
+       perspective: 1px;
+}
+
+.parallax-group {
+       position: relative;
+       height: 100vh;
+       transform-style: preserve-3d;
+}
+
+.parallax-group div:nth-child(1) {
+       background-color: #ffe4c7;
+       margin-top: 600px;
+       background-color: #d9d1b8;
+       transform: translateZ(-12px) scale(13);
+}
+
+.parallax-group div:nth-child(1):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #d9d1b8 66.01%), linear-gradient(45deg, #d9d1b8 34%, transparent 34.01%);
+       background-position: 218px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.parallax-group div:nth-child(2) {
+       background-color: #ffe4c7;
+       margin-top: 900px;
+       background-color: #b3beaa;
+       transform: translateZ(-10px) scale(11);
+}
+
+.parallax-group div:nth-child(2):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #b3beaa 66.01%), linear-gradient(45deg, #b3beaa 34%, transparent 34.01%);
+       background-position: 242px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.parallax-group div:nth-child(3) {
+       background-color: #ffe4c7;
+       margin-top: 1200px;
+       background-color: #8cab9b;
+       transform: translateZ(-8px) scale(9);
+}
+
+.parallax-group div:nth-child(3):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #8cab9b 66.01%), linear-gradient(45deg, #8cab9b 34%, transparent 34.01%);
+       background-position: 251px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.parallax-group div:nth-child(4) {
+       background-color: #ffe4c7;
+       margin-top: 1500px;
+       background-color: #66988d;
+       transform: translateZ(-6px) scale(7);
+}
+
+.parallax-group div:nth-child(4):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #66988d 66.01%), linear-gradient(45deg, #66988d 34%, transparent 34.01%);
+       background-position: 220px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.parallax-group div:nth-child(5) {
+       background-color: #ffe4c7;
+       margin-top: 1800px;
+       background-color: #40857e;
+       transform: translateZ(-4px) scale(5);
+}
+
+.parallax-group div:nth-child(5):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #40857e 66.01%), linear-gradient(45deg, #40857e 34%, transparent 34.01%);
+       background-position: 34px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.parallax-group div:nth-child(6) {
+       background-color: #ffe4c7;
+       margin-top: 2100px;
+       background-color: #197370;
+       transform: translateZ(-2px) scale(3);
+}
+
+.parallax-group div:nth-child(6):before {
+       content: "";
+       width: 100%;
+       height: 200px;
+       position: absolute;
+       bottom: 100%;
+       left: 0;
+       background-image: linear-gradient(135deg, transparent 66%, #197370 66.01%), linear-gradient(45deg, #197370 34%, transparent 34.01%);
+       background-position: 227px 0px;
+       background-size: 200px 100%;
+       background-repeat: repeat-x;
+}
+
+.content {
+       position: relative;
+       background-color: transparent;
+       font-family: "Arial";
+       letter-spacing: 1px;
+       text-transform: uppercase;
+       line-height: 40px;
+       z-index: 10;
+       width: 100%;
+       font-size: 15px;
+       text-align: center;
+       color: white;
+       margin-top: 1000px;
+       transform: translateZ(-2px) scale(3);
+}
+
+.fill {
+       height: 80%;
+}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="AppCtrl">
+<div>
+
+<div class="bg"></div>
+<div class="parallax">
+  <div class="parallax-group">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer fill"></div>
+  </div>
+  <div class="content">
+   <div><h2>Date:</h2>{{history.date}}</div>
+   
+<div class="col-md-3">
+<div><h2>Year:</h2>{{history.data.events[0].year}}</div></div>
+<div class="col-md-8">
+<div><h2>Event:</h2>{{history.data.events[0].text}}</div></div>
+
+<div class="col-md-3">
+<div><h2>Year:</h2>{{history.data.events[1].year}}</div></div>
+<div class="col-md-8">
+<div><h2>Event:</h2>{{history.data.events[1].text}}</div></div>
+
+<div class="col-md-3">
+<div><h2>Year:</h2>{{history.data.events[2].year}}</div></div>
+<div class="col-md-8">
+<div><h2>Event:</h2>{{history.data.events[2].text}}</div></div>
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
