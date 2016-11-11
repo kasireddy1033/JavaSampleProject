@@ -18,7 +18,7 @@ myApp.controller('AppCtrl', function($scope, $http) {
   var updateView = function() {
                  $http({  
           method : 'GET',  
-          url : 'SampleJavaProject/v1/history'  
+          url : 'v1/history'  
       }).then(function successCallback(response) {  
           $scope.history = response.data;  
       }, function errorCallback(response) {  
