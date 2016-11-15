@@ -47,7 +47,13 @@ font-weight:600 !important;
        z-index: 0;
        background-color: #e5d8b5;
 }
-
+  .content-para{
+  background-color: white; 
+ opacity: 0.5; 
+ font-weight: 600; 
+ color: black; 
+ padding-left: 1rem;
+  }
 
 .layer {
        position: fixed;
@@ -237,22 +243,22 @@ font-size:2.5rem;
    <div><span>{{history.date}}</span></div>
    <br>
 <div><span>{{history.data.events[0].year}}:</span>
-<div>{{history.data.events[0].text}}</div></div>
+<div class="content-para">{{history.data.events[0].text}}</div></div>
 <br>
 <div><span>{{history.data.events[1].year}}:</span>
-<div>{{history.data.events[1].text}}</div></div>
+<div class="content-para">{{history.data.events[1].text}}</div></div>
 <br>
 <div><span>{{history.data.events[2].year}}:</span>
-<div>{{history.data.events[2].text}}</div></div>
+<div class="content-para">{{history.data.events[2].text}}</div></div>
 <br>
 <div><span>{{history.data.events[3].year}}:</span>
-<div>{{history.data.events[3].text}}</div></div>
+<div class="content-para">{{history.data.events[3].text}}</div></div>
 <br>
 <div><span>{{history.data.events[4].year}}:</span>
-<div>{{history.data.events[4].text}}</div></div>
+<div class="content-para">{{history.data.events[4].text}}</div></div>
 <br>
 <div><span>{{history.data.events[5].year}}:</span>
-<div>{{history.data.events[5].text}}</div></div>
+<div class="content-para">{{history.data.events[5].text}}</div></div>
   </div>
 </div>
 
