@@ -17,7 +17,7 @@ public class HistoryServiceImpl implements HistoryService {
 
 	public History getHistory() {
 		Client client = Client.create();
-		WebResource webResource = client.resource("http://history.muffinlabs.com/date/10/10");
+		WebResource webResource = client.resource("http://history.muffinlabs.com/date/12/25");
 		ClientResponse response = webResource.type("application/json").get(ClientResponse.class);
 		String output = response.getEntity(String.class);
 
