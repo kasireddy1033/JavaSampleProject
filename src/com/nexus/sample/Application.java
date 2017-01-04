@@ -10,7 +10,8 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 @SuppressWarnings("deprecation")
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
-
+//Application class to start the Spring Boot application
+    
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(Application.class);
