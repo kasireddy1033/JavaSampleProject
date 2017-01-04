@@ -12,7 +12,7 @@ import com.nexus.sample.java.service.HistoryService;
 @RestController
 @RequestMapping(value = "/v1")
 public class HistoryController {
-
+//Controller to fetch the history data
 	@Autowired
 	private HistoryService historyService;
 
