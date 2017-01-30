@@ -20,9 +20,9 @@ public class Application extends SpringBootServletInitializer {
 
     
     public static void main(String[] args) {
-        try{
-        SpringApplication.run(Application.class, args);
-        } catch (Exception e) {
-        }
+//        try {
+            SpringApplication.run(Application.class, args);
+//        } catch (Exception e) {
+//        }
     }
 }
