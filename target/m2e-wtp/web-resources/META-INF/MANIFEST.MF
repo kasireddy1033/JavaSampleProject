@@ -3,7 +3,7 @@ Implementation-Title: SampleJavaProject
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: M1035936
 Implementation-Vendor-Id: SampleJavaProject
-Build-Jdk: 1.8.0_102
+Build-Jdk: 1.8.0_131
 Implementation-URL: http://projects.spring.io/spring-boot/SampleJavaPr
  oject/
 Created-By: Maven Integration for Eclipse
