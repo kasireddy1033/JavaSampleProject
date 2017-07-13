@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Almendra+Display|Titillium+Web" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,9 +17,9 @@ var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', function($scope, $http) {
 
   var updateView = function() {
-	  $http({  
+                 $http({  
           method : 'GET',  
-          url : 'http://localhost:8086/SampleJavaProject/v1/history'  
+          url : 'v1/history'  
       }).then(function successCallback(response) {  
           $scope.history = response.data;  
       }, function errorCallback(response) {  
@@ -32,17 +35,29 @@ myApp.controller('AppCtrl', function($scope, $http) {
 <title>History App</title>
 
 <style type="text/css">
+body{
+font-family: 'Titillium Web', sans-serif;}
+h2{
+font-weight:600 !important;
+}
 .bg {
        position: absolute;
        height: 100%;
        width: 100%;
        top: 0px;
        z-index: 0;
-       background-color: #197370;
+       background-color: #e5d8b5;
 }
+ 
+   .content-para{
+  background-color:white;
+  opacity:0.5;
+  font-weight:600;
+  color:black;
+  padding-left:1rem;
+  }
 
-
-.layer {
+  .layer {
        position: fixed;
        top: 0px;
        margin: auto;
@@ -60,7 +75,7 @@ myApp.controller('AppCtrl', function($scope, $http) {
 .parallax {
        height: 100vh;
        overflow-x: hidden;
-       overflow-y: scroll;
+    
        perspective: 1px;
 }
 
@@ -193,19 +208,21 @@ myApp.controller('AppCtrl', function($scope, $http) {
 .content {
        position: relative;
        background-color: transparent;
-       font-family: "Arial";
        letter-spacing: 1px;
        text-transform: uppercase;
        line-height: 40px;
        z-index: 10;
-       width: 100%;
+       width: 110rem;
        font-size: 15px;
-       text-align: center;
+       text-align: left;
+       margin-left:25rem;
        color: white;
-       margin-top: 1000px;
+       margin-top:-62rem;
        transform: translateZ(-2px) scale(3);
 }
-
+span{
+font-size:2.5rem;
+}
 .fill {
        height: 80%;
 }
@@ -225,27 +242,27 @@ myApp.controller('AppCtrl', function($scope, $http) {
     <div class="layer fill"></div>
   </div>
   <div class="content">
-   <div><h2>Date:</h2>{{history.date}}</div>
-   
-<div class="col-md-3">
-<div><h2>Year:</h2>{{history.data.events[0].year}}</div></div>
-<div class="col-md-8">
-<div><h2>Event:</h2>{{history.data.events[0].text}}</div></div>
-
-<div class="col-md-3">
-<div><h2>Year:</h2>{{history.data.events[1].year}}</div></div>
-<div class="col-md-8">
-<div><h2>Event:</h2>{{history.data.events[1].text}}</div></div>
-
-<div class="col-md-3">
-<div><h2>Year:</h2>{{history.data.events[2].year}}</div></div>
-<div class="col-md-8">
-<div><h2>Event:</h2>{{history.data.events[2].text}}</div></div>
-
-
+   <div><span>{{history.date}}</span></div>
+   <br>
+<div><span>{{history.data.events[0].year}}:</span>
+<div class="content-para">{{history.data.events[0].text}}</div></div>
+<br>
+<div><span>{{history.data.events[1].year}}:</span>
+<div class="content-para">{{history.data.events[1].text}}</div></div>
+<br>
+<div><span>{{history.data.events[2].year}}:</span>
+<div class="content-para">{{history.data.events[2].text}}</div></div>
+<br>
+<div><span>{{history.data.events[3].year}}:</span>
+<div class="content-para">{{history.data.events[3].text}}</div></div>
+<br>
+<div><span>{{history.data.events[4].year}}:</span>
+<div class="content-para">{{history.data.events[4].text}}</div></div>
+<br>
+<div><span>{{history.data.events[5].year}}:</span>
+<div class="content-para">{{history.data.events[5].text}}</div></div>
   </div>
 </div>
-
 
 
 </div>
