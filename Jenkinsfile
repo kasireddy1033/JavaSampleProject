@@ -6,6 +6,7 @@ pipeline {
         parallel(
           "Dev": {
             git(url: 'https://github.com/Ramaraja-Ramanujan/JavaSampleProject.git', branch: 'master')
+            sh 'mvn clean install'
             
           },
           "Prod": {
